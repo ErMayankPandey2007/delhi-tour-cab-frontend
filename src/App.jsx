@@ -3,7 +3,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import Loader from './components/Loader';
+
 import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
@@ -28,25 +28,14 @@ import { useState, useEffect } from 'react';
 
 const AppContent = () => {
   const [showCallbackForm, setShowCallbackForm] = useState(false);
-  const [loading, setLoading] = useState(false);
+
   const location = useLocation();
 
   useEffect(() => {
-    // Skip loading for thank-you page to avoid interrupting the flow
-    if (location.pathname === '/thank-you') {
-      setLoading(false);
-      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-      return;
-    }
-
-    setLoading(true);
-    // Remove the timer since loader will handle completion
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
   }, [location.pathname]);
 
-  if (loading) {
-    return <Loader onComplete={() => setLoading(false)} />;
-  }
+
 
   return (
     <div className="App">

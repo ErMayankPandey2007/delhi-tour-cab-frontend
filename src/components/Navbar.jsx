@@ -74,13 +74,13 @@ const Navbar = () => {
           <div className="flex items-center gap-2 sm:gap-4">
             <motion.div
               whileHover={{ scale: 1.05 }}
-              className="flex flex-col gap-2 items-start"
+              className="flex flex-col items-start justify-center h-full"
             >
               <img src={logo}
                 onClick={() => navigate('/')}
-                alt="Delhi Tour Cab Logo" className="h-14 md:h-16 cursor-pointer w-auto rounded-lg" />
-              <div className="bg-slate-700 text-white text-[10px] md:text-xs px-2 py-0.5 rounded-t-none rounded-b-md -mt-1  mb-1 font-extrabold whitespace-nowrap overflow-hidden w-full max-w-[120px] md:max-w-none">
-                <marquee behavior="scroll" direction="left" scrollamount="3">
+                alt="Delhi Tour Cab Logo" className="h-10 md:h-16 cursor-pointer w-auto rounded-lg object-contain" />
+              <div className="bg-slate-800 text-white text-[8px] md:text-xs px-2 py-0.5 rounded-md mt-0.5 font-bold whitespace-nowrap overflow-hidden w-full max-w-[100px] md:max-w-none shadow-sm">
+                <marquee behavior="scroll" direction="left" scrollamount="2">
                   A Unit of SU TAXI SERVICE
                 </marquee>
               </div>

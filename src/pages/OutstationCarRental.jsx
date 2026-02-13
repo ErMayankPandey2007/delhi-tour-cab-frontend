@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { FaRoute, FaMapMarkedAlt, FaCar, FaShieldAlt, FaClock, FaUsers, FaCheckCircle, FaPhone, FaWhatsapp, FaGasPump } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
-import { slider2, drizer, innova, verna, scorpio, ertiga, breeza, fortuner, kiacarnival } from '../utils/images';
+import { slider2, drizer, innova, verna, scorpio, ertiga, breeza, fortuner, kiacarnival, wagonr, kiacarens, hondacity, thar, defender, vellfire, forcewinger, forcetempo, forceurbano, volvo } from '../utils/images';
 import PopularTours from '../components/PopularTours';
 
 const OutstationCarRental = () => {
@@ -9,56 +9,24 @@ const OutstationCarRental = () => {
 
   const carssTypes = [
     {
-      name: 'Toyota Innova Crysta',
-      image: innova,
-      capacity: '7 Seater',
-      fuel: 'Diesel',
-      price: '₹20/km',
-      description: 'The ultimate choice for long family trips. Superior comfort and huge luggage space.',
-      features: ['Long Route Comfort', 'Large Boot Space', 'Rear AC Vents']
-    },
-    {
-      name: 'Toyota Fortuner',
-      image: fortuner,
-      capacity: '7 Seater',
-      fuel: 'Diesel',
-      price: '₹45/km',
-      description: 'The king of highways. Powerful, safe, and prestigious for long-distance travel.',
-      features: ['Premium Comfort', 'All Terrain', 'VIP Presence']
-    },
-    {
-      name: 'Kia Carnival',
-      image: kiacarnival,
-      capacity: '7 Seater',
-      fuel: 'Diesel',
-      price: '₹50/km',
-      description: 'Luxury travel redefined. Perfect for premium family vacations and executive outstation trips.',
-      features: ['VIP Lounge Seats', 'Dual Sunroof', 'Advanced Safety']
-    },
-    {
-      name: 'Maruti Suzuki Ertiga',
-      image: ertiga,
-      capacity: '7 Seater',
-      fuel: 'Petrol/CNG',
-      price: '₹14/km',
-      description: 'Economical 7-seater for group travels. Perfect balance of price and space.',
-      features: ['Value for Money', 'Smooth Ride', 'Flexible Seating']
-    },
-    {
-      name: 'Hyundai Verna',
-      image: verna,
+      name: 'Maruti Suzuki WagonR',
+      image: wagonr,
       capacity: '5 Seater',
-      fuel: 'Petrol/Diesel',
-      price: '₹16/km',
-      description: 'A stylish and comfortable sedan for smooth highway cruising and elite travel.',
-      features: ['Smart Trunk', 'Ventilated Seats', 'Premium Audio']
+      fuel: 'Petrol/CNG',
+      perKm: '₹11/km',
+      driverAllow: '₹300/day',
+      dayLimit: '250km',
+      description: 'Budget-friendly hatchback perfect for short outstation trips.',
+      features: ['Economical', 'Compact', 'Easy Drive']
     },
     {
       name: 'Maruti Suzuki Swift Dzire',
       image: drizer,
       capacity: '5 Seater',
       fuel: 'Petrol/CNG',
-      price: '₹12/km',
+      perKm: '₹12/km',
+      driverAllow: '₹300/day',
+      dayLimit: '250km',
       description: 'Compact sedan, ideal for small families or solo business trips out of town.',
       features: ['Comfortable Sedan', 'Efficient', 'Proven Reliability']
     },
@@ -67,19 +35,199 @@ const OutstationCarRental = () => {
       image: breeza,
       capacity: '5 Seater',
       fuel: 'Petrol',
-      price: '₹14/km',
+      perKm: '₹13/km',
+      driverAllow: '₹300/day',
+      dayLimit: '250km',
       description: 'Compact SUV for safe and comfortable highway trips with a sporty feel.',
       features: ['High Ground Clearance', 'Tough Build', 'Easy Driving']
+    },
+    {
+      name: 'Maruti Suzuki Ertiga',
+      image: ertiga,
+      capacity: '7 Seater',
+      fuel: 'Petrol/CNG',
+      perKm: '₹15/km',
+      driverAllow: '₹300/day',
+      dayLimit: '250km',
+      description: 'Economical 7-seater for group travels. Perfect balance of price and space.',
+      features: ['Value for Money', 'Smooth Ride', 'Flexible Seating']
+    },
+    {
+      name: 'Kia Carens',
+      image: kiacarens,
+      capacity: '7 Seater',
+      fuel: 'Petrol/Diesel',
+      perKm: '₹17/km',
+      driverAllow: '₹300/day',
+      dayLimit: '250km',
+      description: 'Modern MUV with premium features for comfortable family outstation travel.',
+      features: ['Premium Comfort', 'Spacious', 'Modern Design']
+    },
+    {
+      name: 'Toyota Innova Crysta',
+      image: innova,
+      capacity: '7 Seater',
+      fuel: 'Diesel',
+      perKm: '₹20/km',
+      driverAllow: '₹400/day',
+      dayLimit: '250km',
+      description: 'The ultimate choice for long family trips. Superior comfort and huge luggage space.',
+      features: ['Long Route Comfort', 'Large Boot Space', 'Rear AC Vents']
     },
     {
       name: 'Mahindra Scorpio',
       image: scorpio,
       capacity: '7 Seater',
       fuel: 'Diesel',
-      price: '₹18/km',
+      perKm: '₹20/km',
+      driverAllow: '₹400/day',
+      dayLimit: '250km',
       description: 'Rugged SUV for hilly areas and tough terrains. Strong presence on the highway.',
       features: ['Rugged SUV', 'Powerful Engine', 'High Ground Clearance']
-    }
+    },
+    {
+      name: 'Mahindra Thar',
+      image: thar,
+      capacity: '5 Seater',
+      fuel: 'Diesel',
+      perKm: '₹22/km',
+      driverAllow: '₹400/day',
+      dayLimit: '250km',
+      description: 'Adventure-ready SUV perfect for mountain trips and off-road journeys.',
+      features: ['4x4 Capability', 'Adventure Ready', 'Rugged']
+    },
+    {
+      name: 'Honda City',
+      image: hondacity,
+      capacity: '5 Seater',
+      fuel: 'Petrol',
+      perKm: '₹30/km',
+      driverAllow: '₹500/day',
+      dayLimit: '250km',
+      description: 'Executive sedan for premium outstation business trips.',
+      features: ['Premium Sedan', 'Luxury', 'Smooth Drive']
+    },
+    {
+      name: 'Hyundai Verna',
+      image: verna,
+      capacity: '5 Seater',
+      fuel: 'Petrol/Diesel',
+      perKm: '₹30/km',
+      driverAllow: '₹500/day',
+      dayLimit: '250km',
+      description: 'A stylish and comfortable sedan for smooth highway cruising and elite travel.',
+      features: ['Smart Trunk', 'Ventilated Seats', 'Premium Audio']
+    },
+    {
+      name: 'Toyota Fortuner',
+      image: fortuner,
+      capacity: '7 Seater',
+      fuel: 'Diesel',
+      perKm: '₹40/km',
+      driverAllow: '₹500/day',
+      dayLimit: '250km',
+      description: 'The king of highways. Powerful, safe, and prestigious for long-distance travel.',
+      features: ['Premium Comfort', 'All Terrain', 'VIP Presence']
+    },
+    {
+      name: 'Kia Carnival',
+      image: kiacarnival,
+      capacity: '7 Seater',
+      fuel: 'Diesel',
+      perKm: '₹60/km',
+      driverAllow: '₹800/day',
+      dayLimit: '250km',
+      description: 'Luxury travel redefined. Perfect for premium family vacations and executive outstation trips.',
+      features: ['VIP Lounge Seats', 'Dual Sunroof', 'Advanced Safety']
+    },
+    {
+      name: 'Land Rover Defender',
+      image: defender,
+      capacity: '7 Seater',
+      fuel: 'Diesel',
+      perKm: '₹80/km',
+      driverAllow: '₹800/day',
+      dayLimit: '250km',
+      description: 'Iconic luxury SUV for premium outstation adventures.',
+      features: ['Ultra Luxury', '4x4', 'Premium']
+    },
+    {
+      name: 'Toyota Vellfire',
+      image: vellfire,
+      capacity: '7 Seater',
+      fuel: 'Petrol Hybrid',
+      perKm: '₹95/km',
+      driverAllow: '₹1,000/day',
+      dayLimit: '250km',
+      description: 'Ultimate luxury MPV for VIP outstation travel.',
+      features: ['Executive Lounge', 'Hybrid', 'Ultra Luxury']
+    },
+    {
+      name: 'Force Winger',
+      image: forcewinger,
+      capacity: '13 Seater',
+      fuel: 'Diesel',
+      perKm: '₹22/km',
+      driverAllow: '₹400/day',
+      dayLimit: '250km',
+      description: 'Spacious van for group outstation trips.',
+      features: ['Group Travel', 'Spacious', 'Comfortable']
+    },
+    {
+      name: 'Tempo Traveller (12+1)',
+      image: forcetempo,
+      capacity: '13 Seater',
+      fuel: 'Diesel',
+      perKm: '₹25/km',
+      driverAllow: '₹500/day',
+      dayLimit: '250km',
+      description: 'Perfect for group tours and family outings.',
+      features: ['Push Back Seats', 'AC', 'Music System']
+    },
+    {
+      name: 'Tempo Traveller (17+1)',
+      image: forcetempo,
+      capacity: '18 Seater',
+      fuel: 'Diesel',
+      perKm: '₹30/km',
+      driverAllow: '₹500/day',
+      dayLimit: '250km',
+      description: 'Large group travel solution for outstation tours.',
+      features: ['Large Group', 'Comfortable', 'Spacious']
+    },
+    {
+      name: 'Bus (25 to 45 Seats)',
+      image: volvo,
+      capacity: '25-45 Seater',
+      fuel: 'Diesel',
+      perKm: '₹35-75/km',
+      driverAllow: '₹1,000/day',
+      dayLimit: '250km',
+      description: 'Large buses for corporate and group outstation travel.',
+      features: ['Large Capacity', 'AC', 'On Request']
+    },
+    {
+      name: 'Volvo Sleeper Bus',
+      image: volvo,
+      capacity: '40 Seater',
+      fuel: 'Diesel',
+      perKm: '₹90-125/km',
+      driverAllow: '₹800/day',
+      dayLimit: '250km',
+      description: 'Luxury sleeper bus for long-distance overnight journeys.',
+      features: ['Sleeper Berths', 'AC', 'Premium']
+    },
+    {
+      name: 'Urbania',
+      image: forceurbano,
+      capacity: '17 Seater',
+      fuel: 'Diesel',
+      perKm: '₹40/km',
+      driverAllow: '₹800/day',
+      dayLimit: '250km',
+      description: 'Luxury sleeper bus for long-distance overnight journeys.',
+      features: ['Sleeper Berths', 'AC', 'Premium']
+    },
   ];
 
   const handleWhatsApp = (carssName = '') => {
@@ -162,13 +310,32 @@ const OutstationCarRental = () => {
                 <div className="p-5 flex-grow bg-white">
                   <div className="flex justify-between items-start mb-4 bg-gradient-to-r from-orange-600 to-orange-400 p-3 rounded-xl shadow-inner">
                     <h3 className="text-sm font-bold text-white flex-1 mr-2 leading-tight uppercase tracking-wide">{carss.name}</h3>
-                    <div className="text-white font-black bg-orange-700/30 px-3 py-1.5 rounded-lg border border-orange-500/50 shadow-sm">{carss.price}</div>
+                    <div className="text-white font-black bg-orange-700/30 px-3 py-1.5 rounded-lg border border-orange-500/50 shadow-sm">{carss.perKm}</div>
                   </div>
                   <div className="flex gap-4 text-[10px] font-bold text-zinc-500 mb-3 uppercase tracking-widest">
                     <span className="flex items-center gap-1.5 bg-gray-50 px-2 py-1 rounded-md border border-gray-100"><FaUsers className="text-orange-500" /> {carss.capacity}</span>
                     <span className="flex items-center gap-1.5 bg-gray-50 px-2 py-1 rounded-md border border-gray-100"><FaGasPump className="text-orange-500" /> {carss.fuel}</span>
                   </div>
                   <p className="text-sm text-gray-600 mb-4 line-clamp-2 leading-relaxed text-justify italic">"{carss.description}"</p>
+                  
+                  {/* Pricing Details */}
+                  <div className="bg-gradient-to-br from-orange-50 to-yellow-50 p-3 rounded-lg mb-4 border border-orange-100">
+                    <div className="gap-4 flex flex-col text-xs">
+                      <div className="flex gap-4">
+                        <span className="text-gray-600 font-medium">Driver Allow:</span>
+                        <span className="text-orange-600 font-bold">{carss.driverAllow}</span>
+                      </div>
+                      <div className="flex gap-4">
+                        <span className="text-gray-600 font-medium">Day Limit:</span>
+                        <span className="text-orange-600 font-bold">{carss.dayLimit}</span>
+                      </div>
+                      <div className="flex gap-4 col-span-2 pt-2 border-t border-orange-200">
+                        <span className="text-gray-600 font-medium">Toll/State Tax:</span>
+                        <span className="text-orange-600 font-bold">On Request</span>
+                      </div>
+                    </div>
+                  </div>
+
                   <div className="flex flex-wrap gap-2 mb-2">
                     {carss.features.map((feat, i) => (
                       <span key={i} className="text-[10px] bg-orange-50 text-orange-600 px-3 py-1 rounded-full font-bold uppercase border border-orange-100/50 shadow-sm">

@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { FaPhone, FaWhatsapp, FaEnvelope, FaMapMarkerAlt, FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaCar } from 'react-icons/fa';
-import { logo } from '../utils/images';
+import { logo, iso, ministry, msme } from '../utils/images';
 
 const Footer = () => {
   return (
@@ -89,6 +89,10 @@ const Footer = () => {
                 <span>Mob. +91-9278063535</span>
               </div>
               <div className="flex items-center text-gray-400 justify-center md:justify-start">
+                <FaPhone className="mr-3 text-orange-500 flex-shrink-0" size={16} />
+                <span>Mob. +91-9838774155</span>
+              </div>
+              <div className="flex items-center text-gray-400 justify-center md:justify-start">
                 <FaWhatsapp className="mr-3 text-orange-500 flex-shrink-0" size={16} />
                 <span>Mob. +91-9278063535</span>
               </div>
@@ -105,6 +109,59 @@ const Footer = () => {
         </div>
       </div>
 
+      {/* Certification Logos Section */}
+      <div className="border-t border-gray-200 bg-gradient-to-br from-orange-50 via-white to-blue-50 py-10">
+        <div className="max-w-7xl mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-8"
+          >
+            <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-2">Certified & <span className="text-orange-500">Trusted</span></h3>
+            <p className="text-gray-600 text-sm">Recognized by Government of India</p>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="flex flex-wrap justify-center items-center gap-8 md:gap-20"
+          >
+            <motion.div
+              whileHover={{ y: -8, scale: 1.05 }}
+              className="bg-white p-6 md:p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all border-2 border-orange-100 hover:border-orange-300"
+            >
+              <img
+                src={ministry}
+                alt="Ministry Certification"
+                className="h-24 md:h-28 w-auto object-contain"
+              />
+            </motion.div>
+             <motion.div
+              whileHover={{ y: -8, scale: 1.05 }}
+              className="bg-white p-6 md:p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all border-2 border-orange-100 hover:border-orange-300"
+            >
+              <img
+                src={iso}
+                alt="ISO Certification"
+                className="h-24 md:h-28 w-auto object-contain"
+              />
+            </motion.div>
+            <motion.div
+              whileHover={{ y: -8, scale: 1.05 }}
+              className="bg-white p-6 md:p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all border-2 border-orange-100 hover:border-orange-300"
+            >
+              <img
+                src={msme}
+                alt="MSME Certification"
+                className="h-24 md:h-28 w-auto object-contain"
+              />
+            </motion.div>
+           
+          </motion.div>
+        </div>
+      </div>
+
       {/* Bottom Footer */}
       <div className="border-t border-gray-800">
         <div className="max-w-7xl mx-auto px-4 py-4 md:py-6">
@@ -115,8 +172,8 @@ const Footer = () => {
               viewport={{ once: true }}
               className="text-gray-400 text-sm mb-4 md:mb-0"
             >
-              © 2026 Delhi Tour Cab.|<a href="https://thedigicoders.com/" target='_blank' className='text-sm md:text-md text-orange-500'> Team DigiCoders</a>
             </motion.p>
+            <div className='flex justify-center items-center -mt-8 md:mr-80 md:mt-1'> <p className='text-black'> &copy; 2026 DelhiTourCab.com </p>| <a href="https://sutaxiservice.com/" target='_blank' className='text-sm md:text-md text-orange-500'>A Unit of SU TAXI SERVICE</a></div>
             <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}

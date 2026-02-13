@@ -8,6 +8,11 @@ import slider4 from '../assets/Images/slider4.jpg';
 import slider5 from '../assets/Images/slider5.jpeg';
 import delhiBannerNew from '../assets/cities-Places/delhibanner.webp';
 
+// Certification logos
+import iso from '../assets/Images/iso.jpeg';
+import ministry from '../assets/Images/ministry.jpeg';
+import msme from '../assets/Images/msme.png';
+
 // delhi-siteseeing tour 
 
 import qutubMinar from '../assets/delhisiteseeing/qutumbminar.webp';
@@ -50,8 +55,9 @@ import forceurbano from '../assets/Updated cars/forceurbano.png'
 const forceurbania = forceurbano; // Alias for compatibility
 import forcewinger from '../assets/Updated cars/force winger.png'
 import vellfire from '../assets/Updated cars/velfre.png'
+import fortuner from '../assets/Updated cars/fortuner.avif'
 const toyotavellfire = vellfire; // Alias for compatibility
-const fortuner = innova; // Alias for compatibility
+// const fortuner = fortuner; // Alias for compatibility
 
 // NEW CARS SLIDER IMAGES
 import defenderSlider from '../assets/Updated cars/defender-slider.png';
@@ -102,6 +108,10 @@ export {
   slider3,
   slider4,
   slider5,
+  // Certification logos
+  iso,
+  ministry,
+  msme,
   // All cars
   volvo,
   wagonr,

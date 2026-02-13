@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { FaCar, FaUsers, FaGasPump, FaShieldAlt, FaPhone, FaWhatsapp } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
-import { innova, fortuner, slider3, breeza, drizer, hondacity, scorpio, verna, wagonr, ertiga, kiacarnival, toyotavellfire, defender, thar } from '../utils/images';
+import { innova, fortuner, slider3, breeza, drizer, hondacity, scorpio, verna, wagonr, ertiga, kiacarnival, toyotavellfire, defender, thar, kiacarens, forcewinger, forcetempo, volvo, forceurbano } from '../utils/images';
 import PopularTours from '../components/PopularTours';
 
 const LocalCarRental = () => {
@@ -9,104 +9,252 @@ const LocalCarRental = () => {
 
   const carssTypes = [
     {
-      name: 'Maruti Suzuki Vitara Brezza',
-      image: breeza,
+      name: 'Maruti Suzuki WagonR',
+      image: wagonr,
       capacity: '5 Seater',
-      fuel: 'Petrol',
-      price: '₹14/km',
-      description: 'Sporty and compact SUV, perfect for navigating city traffic with ease.',
-      features: ['AC', 'Music System', 'GPS', 'SUV'],
-      examples: 'Compact SUV'
+      fuel: 'Petrol/CNG',
+      basePrice: '₹1,800',
+      extraKm: '₹14/km',
+      extraHr: '₹200/hr',
+      nightCharge: '₹300',
+      description: 'Budget-friendly hatchback with surprisingly spacious interiors for short city hops.',
+      features: ['8hr & 80km', 'AC', 'Music System', 'Spacious'],
+      examples: 'Hatchback'
     },
     {
       name: 'Maruti Suzuki Swift Dzire',
       image: drizer,
       capacity: '5 Seater',
       fuel: 'Petrol/CNG',
-      price: '₹10/km',
+      basePrice: '₹2,000',
+      extraKm: '₹16/km',
+      extraHr: '₹200/hr',
+      nightCharge: '₹300',
       description: 'The most popular choice for city commuters. Highly fuel-efficient and comfortable.',
-      features: ['AC', 'Music System', 'GPS', 'Fuel Efficient'],
+      features: ['8hr & 80km', 'AC', 'Music System', 'Fuel Efficient'],
       examples: 'Compact Sedan'
     },
     {
-      name: 'Honda City',
-      image: hondacity,
+      name: 'Maruti Suzuki Vitara Brezza',
+      image: breeza,
       capacity: '5 Seater',
       fuel: 'Petrol',
-      price: '₹15/km',
-      description: 'Executive sedan for those who prioritize luxury and a smooth driving experience.',
-      features: ['AC', 'Music System', 'GPS', 'Premium'],
-      examples: 'Premium Sedan'
-    },
-    {
-      name: 'Toyota Innova Crysta',
-      image: innova,
-      capacity: '7 Seater',
-      fuel: 'Diesel',
-      price: '₹20/km',
-      description: 'The benchmark of comfort and reliability for family outings or corporate needs.',
-      features: ['Rear AC', 'Large Boot', 'Premium Audio', 'Spacious'],
-      examples: 'MUV'
-    },
-    {
-      name: 'Toyota Fortuner',
-      image: fortuner,
-      capacity: '7 Seater',
-      fuel: 'Diesel',
-      price: '₹45/km',
-      description: 'The ultimate luxury SUV for a powerful presence and unmatched comfort.',
-      features: ['4x4', 'Leather Seats', 'Touchscreen', 'Status'],
-      examples: 'Luxury SUV'
+      basePrice: '₹2,200',
+      extraKm: '₹16/km',
+      extraHr: '₹200/hr',
+      nightCharge: '₹300',
+      description: 'Sporty and compact SUV, perfect for navigating city traffic with ease.',
+      features: ['8hr & 80km', 'AC', 'Music System', 'SUV'],
+      examples: 'Compact SUV'
     },
     {
       name: 'Maruti Suzuki Ertiga',
       image: ertiga,
       capacity: '7 Seater',
       fuel: 'Petrol/CNG',
-      price: '₹13/km',
+      basePrice: '₹2,500',
+      extraKm: '₹18/km',
+      extraHr: '₹200/hr',
+      nightCharge: '₹300',
       description: 'Budget-friendly 7-seater, perfect for family reunions or group city travel.',
-      features: ['AC Vents', 'Flexible Seats', 'Music System', 'Economy'],
+      features: ['8hr & 80km', 'AC Vents', 'Flexible Seats', 'Economy'],
       examples: 'MUV'
+    },
+    {
+      name: 'Kia Carens',
+      image: kiacarens,
+      capacity: '7 Seater',
+      fuel: 'Petrol/Diesel',
+      basePrice: '₹3,000',
+      extraKm: '₹20/km',
+      extraHr: '₹300/hr',
+      nightCharge: '₹300',
+      description: 'Modern MUV with premium features for comfortable family travel.',
+      features: ['8hr & 80km', 'Captain Seats', 'Dual AC', 'Premium'],
+      examples: 'Premium MUV'
     },
     {
       name: 'Mahindra Scorpio',
       image: scorpio,
       capacity: '7 Seater',
       fuel: 'Diesel',
-      price: '₹22/km',
+      basePrice: '₹3,000',
+      extraKm: '₹22/km',
+      extraHr: '₹400/hr',
+      nightCharge: '₹400',
       description: 'Solid and powerful SUV for group travel or making a statement in the city.',
-      features: ['AC', 'Music System', 'GPS', 'Rugged'],
+      features: ['8hr & 80km', 'AC', 'Music System', 'Rugged'],
       examples: 'SUV'
     },
     {
-      name: 'Kia Carnival',
-      image: kiacarnival,
+      name: 'Toyota Innova Crysta',
+      image: innova,
       capacity: '7 Seater',
       fuel: 'Diesel',
-      price: '₹50/km',
-      description: 'Ultra-luxurious MUV with advanced features for premium executive travel.',
-      features: ['Captain Seats', 'Dual Sunroof', 'Dual AC', 'VIP Look'],
-      examples: 'Luxury MUV'
+      basePrice: '₹3,500',
+      extraKm: '₹22/km',
+      extraHr: '₹200/hr',
+      nightCharge: '₹300',
+      description: 'The benchmark of comfort and reliability for family outings or corporate needs.',
+      features: ['8hr & 80km', 'Rear AC', 'Large Boot', 'Spacious'],
+      examples: 'MUV'
+    },
+    {
+      name: 'Mahindra Thar',
+      image: thar,
+      capacity: '5 Seater',
+      fuel: 'Diesel',
+      basePrice: '₹3,500',
+      extraKm: '₹25/km',
+      extraHr: '₹400/hr',
+      nightCharge: '₹400',
+      description: 'Adventure-ready SUV with rugged styling and powerful performance.',
+      features: ['8hr & 80km', '4x4', 'Off-Road', 'Adventure'],
+      examples: 'Adventure SUV'
+    },
+    {
+      name: 'Honda City',
+      image: hondacity,
+      capacity: '5 Seater',
+      fuel: 'Petrol',
+      basePrice: '₹4,500',
+      extraKm: '₹35/km',
+      extraHr: '₹400/hr',
+      nightCharge: '₹500',
+      description: 'Executive sedan for those who prioritize luxury and a smooth driving experience.',
+      features: ['8hr & 80km', 'AC', 'Music System', 'Premium'],
+      examples: 'Premium Sedan'
     },
     {
       name: 'Hyundai Verna',
       image: verna,
       capacity: '5 Seater',
       fuel: 'Petrol/Diesel',
-      price: '₹16/km',
+      basePrice: '₹4,500',
+      extraKm: '₹35/km',
+      extraHr: '₹400/hr',
+      nightCharge: '₹500',
       description: 'Sleek design with advanced features for a premium city tour experience.',
-      features: ['AC', 'Music System', 'GPS', 'Premium'],
+      features: ['8hr & 80km', 'AC', 'Music System', 'Premium'],
       examples: 'Premium Sedan'
     },
     {
-      name: 'Maruti Suzuki WagonR',
-      image: wagonr,
-      capacity: '5 Seater',
-      fuel: 'Petrol/CNG',
-      price: '₹9/km',
-      description: 'Budget-friendly hatchback with surprisingly spacious interiors for short city hops.',
-      features: ['AC', 'Music System', 'GPS', 'Spacious'],
-      examples: 'Hatchback'
+      name: 'Toyota Fortuner',
+      image:  fortuner ,
+      capacity: '7 Seater',
+      fuel: 'Diesel',
+      basePrice: '₹7,500',
+      extraKm: '₹45/km',
+      extraHr: '₹500/hr',
+      nightCharge: '₹500',
+      description: 'The ultimate luxury SUV for a powerful presence and unmatched comfort.',
+      features: ['8hr & 80km', '4x4', 'Leather Seats', 'Status'],
+      examples: 'Luxury SUV'
+    },
+    {
+      name: 'Kia Carnival',
+      image: kiacarnival,
+      capacity: '7 Seater',
+      fuel: 'Diesel',
+      basePrice: '₹8,500',
+      extraKm: '₹65/km',
+      extraHr: '₹600/hr',
+      nightCharge: '₹600',
+      description: 'Ultra-luxurious MUV with advanced features for premium executive travel.',
+      features: ['8hr & 80km', 'Captain Seats', 'Dual Sunroof', 'VIP Look'],
+      examples: 'Luxury MUV'
+    },
+    {
+      name: 'Land Rover Defender',
+      image: defender,
+      capacity: '7 Seater',
+      fuel: 'Diesel',
+      basePrice: '₹9,500',
+      extraKm: '₹90/km',
+      extraHr: '₹800/hr',
+      nightCharge: '₹700',
+      description: 'Iconic luxury SUV with unmatched off-road capability and premium features.',
+      features: ['8hr & 80km', '4x4', 'Luxury', 'Premium'],
+      examples: 'Ultra Luxury SUV'
+    },
+  
+    {
+      name: 'Toyota Vellfire',
+      image: toyotavellfire,
+      capacity: '13 Seater',
+      fuel: 'Petrol Hybrid',
+      basePrice: '₹10,500',
+      extraKm: '₹105/km',
+      extraHr: '₹1,000/hr',
+      nightCharge: '₹800',
+      description: 'Ultimate luxury MPV with executive lounge seating and cutting-edge technology.',
+      features: ['8hr & 80km', 'Executive Seats', 'Hybrid', 'Ultra Luxury'],
+      examples: 'Ultra Luxury MPV'
+    },
+    {
+      name: 'Winger',
+      image: forcewinger,
+      capacity: '7 Seater',
+      fuel: 'Diesel',
+      basePrice: '₹5500',
+      extraKm: '₹25/km',
+      extraHr: '₹500/hr',
+      nightCharge: '₹500',
+      description: 'Spacious van for group outstation trips.',
+      features: ['8hr & 80km', 'Executive Seats', 'Hybrid', 'Ultra Luxury'],
+      examples: 'Ultra Luxury MPV'
+    },
+    {
+      name: 'Tempo(12+1)',
+      image: forcetempo,
+      capacity: '(12+1) Seater',
+      fuel: 'Diesel',
+      basePrice: '₹6000',
+      extraKm: '₹30/km',
+      extraHr: '₹500/hr',
+      nightCharge: '₹500',
+      description: 'Perfect for group tours and family outings.',
+      features: ['8hr & 80km', 'Executive Seats', 'Hybrid', 'Ultra Luxury'],
+      examples: 'Ultra Luxury MPV'
+    },
+    {
+      name: 'Tempo(17+1)',
+      image: volvo,
+      capacity: '(17+1) Seater',
+      fuel: 'Diesel',
+      basePrice: '₹6500',
+      extraKm: '₹30/km',
+      extraHr: '₹500/hr',
+      nightCharge: '₹500',
+      description: 'Large group travel solution for outstation tours.',
+      features: ['8hr & 80km', 'Executive Seats', 'Hybrid', 'Ultra Luxury'],
+      examples: 'Ultra Luxury MPV'
+    },
+    {
+      name: 'Urbania',
+      image: forceurbano,
+      capacity: '17 seats',
+      fuel: 'Diesel',
+      basePrice: '₹8500',
+      extraKm: '₹40/km',
+      extraHr: '₹800/hr',
+      nightCharge: '₹800',
+      description: 'Large group travel solution for outstation tours.',
+      features: ['8hr & 80km', 'Executive Seats', 'Hybrid', 'Ultra Luxury'],
+      examples: 'Ultra Luxury MPV'
+    },
+    {
+      name: 'Bus (25-45 seats)',
+      image:volvo,
+      capacity: '(25-45)seats',
+      fuel: 'Diesel',
+      basePrice: 'On request',
+      extraKm: 'On request/km',
+      extraHr: 'On request/hr',
+      nightCharge: 'On request',
+      description: 'Large group travel solution for outstation tours.',
+      features: ['8hr & 80km', 'Executive Seats', 'Hybrid', 'Ultra Luxury'],
+      examples: 'Ultra Luxury MPV'
     },
   ];
 
@@ -198,12 +346,12 @@ const LocalCarRental = () => {
                 <div className="p-5 flex-grow bg-white">
                   <div className="flex justify-between items-start mb-4 bg-gradient-to-r from-orange-600 to-orange-400 p-3 rounded-xl shadow-inner">
                     <h3 className="text-sm font-bold text-white flex-1 mr-2 leading-tight uppercase tracking-wide">{carss.name}</h3>
-                    <div className="text-white font-black bg-orange-700/30 px-3 py-1.5 rounded-lg border border-orange-500/50 shadow-sm">{carss.price}</div>
+                    <div className="text-white font-black bg-orange-700/30 px-3 py-1.5 rounded-lg border border-orange-500/50 shadow-sm">{carss.basePrice}</div>
                   </div>
                   <p className="text-xs text-zinc-500 mb-2 font-bold uppercase tracking-widest">{carss.examples}</p>
                   <p className="text-sm text-gray-600 mb-4 line-clamp-2 leading-relaxed text-justify">{carss.description}</p>
 
-                  <div className="grid grid-cols-2 gap-3 mb-6">
+                  <div className="grid grid-cols-2 gap-3 mb-4">
                     <div className="flex items-center text-gray-700 text-sm font-medium bg-gray-50 p-2 rounded-lg">
                       <FaUsers className="mr-2 text-orange-500" />
                       {carss.capacity}
@@ -211,6 +359,32 @@ const LocalCarRental = () => {
                     <div className="flex items-center text-gray-700 text-sm font-medium bg-gray-50 p-2 rounded-lg">
                       <FaGasPump className="mr-2 text-orange-500" />
                       {carss.fuel}
+                    </div>
+                  </div>
+
+                  {/* Pricing Details */}
+                  <div className="bg-gradient-to-br  from-orange-50 to-yellow-50 p-3 rounded-lg mb-4 border border-orange-100">
+                    <div className="flex flex-col gap-1 text-lef text-xs">
+                      <div className="flex gap-4">
+                        <span className="text-gray-600 font-medium">8 hr & 40 km</span>
+                        <span className="text-orange-600 font-bold">{carss.basePrice}</span>
+                      </div>
+                      <div className="flex gap-4">
+                        <span className="text-gray-600 font-medium">Extra km:</span>
+                        <span className="text-orange-600 font-bold">{carss.extraKm}</span>
+                      </div>
+                      <div className="flex gap-4 ">
+                        <span className="text-gray-600 font-medium">Extra hrs:</span>
+                        <span className="text-orange-600 font-bold">{carss.extraHr}</span>
+                      </div>
+                      <div className="flex gap-4 col-span-2">
+                        <span className="text-gray-600 font-medium">Night (10 pm - 6 am):</span>
+                        <span className="text-orange-600 font-bold">{carss.nightCharge}</span>
+                      </div>
+                      <div className="flex gap-4 col-span-2 pt-2 border-t border-orange-200">
+                        <span className="text-gray-600 font-medium">Toll/Parking:</span>
+                        <span className="text-orange-600 font-bold">On Request</span>
+                      </div>
                     </div>
                   </div>
 

@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { FaBuilding, FaMapMarkerAlt, FaRoute, FaKey, FaPlane, FaGlobe, FaPhone, FaWhatsapp } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import { innova, delhi, agra, slider2, slider1, slider3, slider4, slider5 } from '../utils/images';
 
 const Services = () => {
   const navigate = useNavigate();
@@ -9,33 +10,45 @@ const Services = () => {
 
   const services = [
     {
-      icon: <FaBuilding />,
+     
       title: 'Corporate Car Rental',
       description: 'Professional transportation for businesses',
       route: '/corporate-car-rental',
-      color: 'from-blue-500 to-blue-600'
+      color: 'from-blue-500 to-blue-600',
+      image: slider1
     },
-    {
-      icon: <FaMapMarkerAlt />,
-      title: 'Local Car Rental',
-      description: 'City travel and daily commutes',
-      route: '/local-car-rental',
-      color: 'from-green-500 to-green-600'
-    },
-    {
-      icon: <FaRoute />,
+     {
+      
       title: 'Outstation Car Rental',
       description: 'Long-distance comfortable travel',
       route: '/outstation-car-rental',
-      color: 'from-orange-500 to-orange-600'
+      color: 'from-orange-500 to-orange-600',
+      image: slider2
+    },
+    {
+    
+      title: 'Local Car Rental',
+      description: 'City travel and daily commutes',
+      route: '/local-car-rental',
+      color: 'from-green-500 to-green-600',
+      image: slider3
+    },
+    {
+      
+      title: 'Airport & Railway Station Transfer',
+      description: 'Long Distance Travel Made Easy',
+      route: '/airport-railway-car-rental',
+      color: 'from-orange-500 to-orange-600',
+      image: slider4
     },
 
     {
-      icon: <FaGlobe />,
-      title: 'Tour Packages',
-      description: 'Complete tour and travel packages',
-      route: '/tour-packages',
-      color: 'from-red-500 to-red-600'
+       
+      title: 'Wedding Car Rental',
+      description: 'style, luxury, making memories, and smooth journeys',
+      route: '/wedding-car-rental',
+      color: 'from-red-500 to-red-600',
+      image: slider5
     }
   ];
 
@@ -86,53 +99,52 @@ const Services = () => {
                 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => handleServiceClick(service)}
-                className={`relative bg-gradient-to-br ${service.color} text-white p-8 rounded-3xl shadow-2xl cursor-pointer overflow-hidden group`}
+                className="relative bg-white rounded-3xl shadow-2xl cursor-pointer overflow-hidden group"
               >
-                {/* Background Pattern */}
-                <div className="absolute inset-0 opacity-10">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-white rounded-full transform translate-x-16 -translate-y-16"></div>
-                  <div className="absolute bottom-0 left-0 w-24 h-24 bg-white rounded-full transform -translate-x-12 translate-y-12"></div>
-                </div>
-
-                {/* Content */}
-                <div className="relative z-10">
+                {/* Background Image */}
+                <div className="relative h-64 overflow-hidden">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                  
+                  {/* Icon Overlay */}
                   <motion.div
                     animate={{
                       rotate: selectedService?.title === service.title ? [0, 360] : 0,
                       scale: selectedService?.title === service.title ? [1, 1.2, 1] : 1
                     }}
                     transition={{ duration: 0.6 }}
-                    className="text-6xl mb-6 flex justify-center group-hover:scale-110 transition-transform duration-300"
+                    className="absolute top-6 left-6 text-5xl text-white drop-shadow-lg group-hover:scale-110 transition-transform duration-300"
                   >
                     {service.icon}
                   </motion.div>
+                </div>
 
-                  <h3 className="text-2xl font-bold mb-4 text-center group-hover:text-yellow-200 transition-colors">
+                {/* Content */}
+                <div className="relative z-10 p-6 bg-white">
+                  <h3 className="text-2xl font-bold mb-3 text-gray-800 group-hover:text-orange-500 transition-colors">
                     {service.title}
                   </h3>
 
-                  <p className="text-center text-white/90 group-hover:text-white transition-colors">
+                  <p className="text-gray-600 group-hover:text-gray-800 transition-colors mb-4">
                     {service.description}
                   </p>
 
                   {/* Click indicator */}
                   <motion.div
-                    initial={{ opacity: 0 }}
-                    whileHover={{ opacity: 1 }}
-                    className="absolute bottom-4 right-4 bg-white/20 rounded-full p-2"
+                    initial={{ x: 0 }}
+                    whileHover={{ x: 5 }}
+                    className="flex items-center text-orange-500 font-semibold"
                   >
-                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                    <span>Explore Service</span>
+                    <svg className="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
                     </svg>
                   </motion.div>
                 </div>
-
-                {/* Hover overlay */}
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  whileHover={{ opacity: 1 }}
-                  className="absolute inset-0 bg-white/10 backdrop-blur-sm"
-                />
               </motion.div>
             ))}
           </div>

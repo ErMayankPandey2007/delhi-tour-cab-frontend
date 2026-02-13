@@ -223,7 +223,7 @@ const ServiceCities = () => {
           viewport={{ once: true }}
           className="text-2xl md:text-4xl font-bold text-center mb-4 md:mb-6 text-gray-800"
         >
-          Service Provide in <span className="text-orange-500">Cities</span>
+          Available Across  <span className="text-orange-500">Multiple Cities</span>
         </motion.h2>
 
         <motion.p

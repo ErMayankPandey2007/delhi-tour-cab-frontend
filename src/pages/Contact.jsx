@@ -261,6 +261,25 @@ const Contact = () => {
                 <p className="text-gray-600">We're here 24/7 for your service</p>
               </div>
 
+              {/* Company Info */}
+              <div className="mb-6 p-4 bg-gradient-to-r from-slate-50 to-blue-50 rounded-2xl border border-slate-200">
+                <div className="space-y-2">
+                  <p className="text-gray-700"><span className="font-bold text-gray-800">Company Name:</span> Delhi Tour Cab</p>
+                  <p className="text-gray-700"><span className="font-bold text-gray-800">Business Unit:</span> S U Taxi Service</p>
+                  <p className="text-gray-700">
+                    <span className="font-bold text-gray-800">Official Website:</span>{' '}
+                    <a 
+                      href="https://sutaxiservice.com" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-orange-600 hover:text-orange-700 font-semibold underline transition-colors"
+                    >
+                      sutaxiservice.com
+                    </a>
+                  </p>
+                </div>
+              </div>
+
               <div className="space-y-6">
                 <motion.div
                   whileHover={{ scale: 1.05, backgroundColor: "#fff7ed" }}
@@ -385,7 +404,7 @@ const Contact = () => {
           >
             <div className="h-96 w-full">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.5742872935!2d77.21394731508236!3d28.63294948240234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd0683329da7%3A0x1b2b3f6a7c8d9e0f!2sPanchkuian%20Rd%2C%20Paharganj%2C%20New%20Delhi%2C%20Delhi%20110001!5e0!3m2!1sen!2sin!4v1635789012345!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.8976!2d77.2071955!3d28.6379739!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfdc84fe1c2c1%3A0x65f04972c3b56a78!2sDelhi%20Tour%20Cab!5e0!3m2!1sen!2sin!4v1234567890!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

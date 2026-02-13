@@ -13,6 +13,7 @@ import {
 } from '../utils/images';
 import TourPackages from './TourPackages';
 import PopularTours from '../components/PopularTours';
+import PopularDestinations from '../components/PopularDestinations';
 
 const Home = () => {
   const [currentReview, setCurrentReview] = useState(0);
@@ -333,6 +334,9 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Popular Destinations Section */}
+      <PopularDestinations />
+
       {/* carss Companies carssousel Section */}
       <section className="py-6 md:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4">
@@ -342,7 +346,7 @@ const Home = () => {
             viewport={{ once: true }}
             className="text-xl md:text-4xl font-bold text-center mb-4 md:mb-12 text-gray-800"
           >
-            Our <span className="text-orange-500">Fleet</span>
+            Our Range <span className="text-orange-500">Of Vehicles</span>
           </motion.h2>
 
           <motion.p
@@ -725,6 +729,60 @@ const Home = () => {
               </div>
               <div className="bg-red-50 p-4 rounded-lg text-center">
                 <span className="font-semibold block text-orange-500">Mayur Vihar</span>
+              </div>
+              <div className="bg-red-50 p-4 rounded-lg text-center">
+                <span className="font-semibold block text-orange-500">Gurgaon</span>
+              </div>
+              <div className="bg-red-50 p-4 rounded-lg text-center">
+                <span className="font-semibold block text-orange-500">Manesar</span>
+              </div>
+              <div className="bg-red-50 p-4 rounded-lg text-center">
+                <span className="font-semibold block text-orange-500">Faridabad</span>
+              </div>
+              <div className="bg-red-50 p-4 rounded-lg text-center">
+                <span className="font-semibold block text-orange-500">Noida</span>
+              </div>
+              <div className="bg-red-50 p-4 rounded-lg text-center">
+                <span className="font-semibold block text-orange-500">Greater Noida</span>
+              </div>
+              <div className="bg-red-50 p-4 rounded-lg text-center">
+                <span className="font-semibold block text-orange-500">Ghaziabad</span>
+              </div>
+              <div className="bg-red-50 p-4 rounded-lg text-center">
+                <span className="font-semibold block text-orange-500">Bahadurgarh</span>
+              </div>
+              <div className="bg-red-50 p-4 rounded-lg text-center">
+                <span className="font-semibold block text-orange-500">Sonipat</span>
+              </div>
+              <div className="bg-red-50 p-4 rounded-lg text-center">
+                <span className="font-semibold block text-orange-500">Meerut</span>
+              </div>
+              <div className="bg-red-50 p-4 rounded-lg text-center">
+                <span className="font-semibold block text-orange-500">Gurugram</span>
+              </div>
+              <div className="bg-red-50 p-4 rounded-lg text-center">
+                <span className="font-semibold block text-orange-500">Karol Bagh</span>
+              </div>
+              <div className="bg-red-50 p-4 rounded-lg text-center">
+                <span className="font-semibold block text-orange-500">Patel Nagar</span>
+              </div>
+              <div className="bg-red-50 p-4 rounded-lg text-center">
+                <span className="font-semibold block text-orange-500">Rajouri Garden</span>
+              </div>
+              <div className="bg-red-50 p-4 rounded-lg text-center">
+                <span className="font-semibold block text-orange-500">Civil Lines</span>
+              </div>
+              <div className="bg-red-50 p-4 rounded-lg text-center">
+                <span className="font-semibold block text-orange-500">Kashmere Gate</span>
+              </div>
+              <div className="bg-red-50 p-4 rounded-lg text-center">
+                <span className="font-semibold block text-orange-500">Anand Vihar</span>
+              </div>
+              <div className="bg-red-50 p-4 rounded-lg text-center">
+                <span className="font-semibold block text-orange-500">IGI Airport</span>
+              </div>
+              <div className="bg-red-50 p-4 rounded-lg text-center">
+                <span className="font-semibold block text-orange-500">Vasant Kunj</span>
               </div>
             </div>
           </div>

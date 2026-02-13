@@ -70,15 +70,20 @@ const Navbar = () => {
       className="bg-white/95 backdrop-blur-md shadow-lg fixed w-full top-0 z-50 transition-all duration-300"
     >
       <div className="max-w-7xl mx-auto px-4">
-        <div className="flex justify-between items-center h-20 md:h-24">
+        <div className="flex justify-between items-center h-20 md:h-28">
           <div className="flex items-center gap-2 sm:gap-4">
             <motion.div
               whileHover={{ scale: 1.05 }}
-              className="flex items-center"
+              className="flex flex-col items-start"
             >
               <img src={logo}
                 onClick={() => navigate('/')}
-                alt="Delhi Tour Cab Logo" className="h-14 md:h-20 cursor-pointer w-auto rounded-lg" />
+                alt="Delhi Tour Cab Logo" className="h-14 md:h-16 cursor-pointer w-auto rounded-lg" />
+              <div className="bg-slate-700 text-white text-[10px] md:text-xs px-2 py-0.5 rounded-t-none rounded-b-md -mt-1 mb-1 font-extrabold whitespace-nowrap overflow-hidden w-full max-w-[120px] md:max-w-none">
+                <marquee behavior="scroll" direction="left" scrollamount="3">
+                  A Unit of SU TAXI SERVICE
+                </marquee>
+              </div>
             </motion.div>
 
             <a href="tel:+91-9278063535" className="flex items-center space-x-1 sm:space-x-2 bg-orange-500 text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-full hover:bg-red-700 transition-all font-bold shadow-md text-[10px] sm:text-base whitespace-nowrap">
@@ -98,92 +103,21 @@ const Navbar = () => {
               About Us
             </Link>
 
-            {/* Services Dropdown */}
-            <div
-              className="relative"
-              onMouseEnter={() => setServicesOpen(true)}
-              onMouseLeave={() => setServicesOpen(false)}
-            >
-              <button className={`flex items-center transition-colors font-medium ${location.pathname === '/services' ? 'text-orange-500 font-semibold' : 'text-gray-700 hover:text-orange-500'
-                }`}>
-                Our Services <FaChevronDown className="ml-1 text-xs" />
-              </button>
-              <AnimatePresence>
-                {servicesOpen && (
-                  <motion.div
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    className="absolute top-full left-0 bg-white shadow-xl rounded-md py-2 w-56 border-t-2 border-orange-500"
-                  >
-                    {services.map((service, index) => {
-                      let linkPath = '/services';
-                      if (service === 'Corporate Car Rental') {
-                        linkPath = '/corporate-car-rental';
-                      } else if (service === 'Local Car Rental') {
-                        linkPath = '/local-car-rental';
-                      } else if (service === 'Outstation Car Rental') {
-                        linkPath = '/outstation-car-rental';
-                      } else if (service === 'Airport and Railway Station Car Rental') {
-                        linkPath = '/airport-railway-car-rental';
-                      } else if (service === 'Wedding Car Rental') {
-                        linkPath = '/wedding-car-rental';
-                      }
+            {/* Services Link */}
+            <Link to="/services" className={`transition-colors font-medium ${location.pathname === '/services' ? 'text-orange-500 font-semibold' : 'text-gray-700 hover:text-orange-500'
+              }`}>
+              Our Services
+            </Link>
 
-                      // else if (service === 'Self Drive carss') {
-                      //   linkPath = '/self-drive-carss';
-                      // }
-
-                      return (
-                        <Link
-                          key={index}
-                          to={linkPath}
-                          className="block px-4 py-3 text-gray-700 hover:bg-red-50 hover:text-orange-500 transition-colors"
-                        >
-                          {service}
-                        </Link>
-                      );
-                    })}
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-
-            {/* Tour Packages Dropdown */}
-            <div
-              className="relative"
-              onMouseEnter={() => setTourOpen(true)}
-              onMouseLeave={() => setTourOpen(false)}
-            >
-              <button className={`flex items-center transition-colors font-medium ${location.pathname.includes('/tour') ? 'text-orange-500 font-semibold' : 'text-gray-700 hover:text-orange-500'
-                }`}>
-                Tour Packages <FaChevronDown className="ml-1 text-xs" />
-              </button>
-              <AnimatePresence>
-                {tourOpen && (
-                  <motion.div
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    className="absolute top-full left-0 bg-white shadow-xl rounded-md py-2 w-64 border-t-2 border-orange-500 max-h-96 overflow-y-auto custom-scrollbar"
-                  >
-                    {tourPackages.map((pkg, index) => (
-                      <Link
-                        key={index}
-                        to={pkg.path}
-                        className="block px-4 py-3 text-gray-700 hover:bg-red-50 hover:text-orange-500 transition-colors"
-                      >
-                        {pkg.label}
-                      </Link>
-                    ))}
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
+            {/* Tour Packages Link */}
+            <Link to="/tour-packages" className={`transition-colors font-medium ${location.pathname === '/tour-packages' || location.pathname.includes('/tour') ? 'text-orange-500 font-semibold' : 'text-gray-700 hover:text-orange-500'
+              }`}>
+              Tour Packages
+            </Link>
 
             <Link to="/contact" className={`transition-colors font-medium ${location.pathname === '/contact' ? 'text-orange-500 font-semibold' : 'text-gray-700 hover:text-orange-500'
               }`}>
-              Contact
+              Contact Us
             </Link>
 
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
@@ -216,79 +150,12 @@ const Navbar = () => {
                 <Link to="/about" onClick={() => setIsOpen(false)} className={`block px-4 py-3 rounded-xl transition-all font-medium ${location.pathname === '/about' ? 'bg-orange-500 text-white shadow-md' : 'text-gray-700 hover:bg-orange-50'}`}>About Us</Link>
 
                 {/* Mobile Services */}
-                <div className="py-1">
-                  <button
-                    onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-                    className="w-full flex items-center justify-between px-4 py-3 text-gray-700 hover:bg-orange-50 rounded-xl transition-all font-medium"
-                  >
-                    Our Services
-                    <FaChevronDown className={`ml-1 text-xs transition-transform duration-300 ${mobileServicesOpen ? 'rotate-180 text-orange-500' : ''}`} />
-                  </button>
-                  <AnimatePresence>
-                    {mobileServicesOpen && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: 'auto', opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        className="overflow-hidden bg-orange-50/50 rounded-xl mx-2"
-                      >
-                        {services.map((service, index) => {
-                          let linkPath = '/services';
-                          if (service === 'Corporate Car Rental') linkPath = '/corporate-car-rental';
-                          else if (service === 'Local Car Rental') linkPath = '/local-car-rental';
-                          else if (service === 'Outstation Car Rental') linkPath = '/outstation-car-rental';
-                          else if (service === 'Airport and Railway Station Car Rental') linkPath = '/airport-railway-car-rental';
-                          else if (service === 'Wedding Car Rental') linkPath = '/wedding-car-rental';
-
-                          return (
-                            <Link
-                              key={index}
-                              to={linkPath}
-                              className="block px-8 py-3 text-gray-600 hover:text-orange-500 transition-colors text-sm font-medium border-l-2 border-transparent hover:border-orange-500"
-                              onClick={() => setIsOpen(false)}
-                            >
-                              {service}
-                            </Link>
-                          );
-                        })}
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
+                <Link to="/services" onClick={() => setIsOpen(false)} className={`block px-4 py-3 rounded-xl transition-all font-medium ${location.pathname === '/services' ? 'bg-orange-500 text-white shadow-md' : 'text-gray-700 hover:bg-orange-50'}`}>Our Services</Link>
 
                 {/* Mobile Tour Packages */}
-                <div className="py-1">
-                  <button
-                    onClick={() => setMobileTourOpen(!mobileTourOpen)}
-                    className="w-full flex items-center justify-between px-4 py-3 text-gray-700 hover:bg-orange-50 rounded-xl transition-all font-medium"
-                  >
-                    Tour Packages
-                    <FaChevronDown className={`ml-1 text-xs transition-transform duration-300 ${mobileTourOpen ? 'rotate-180 text-orange-500' : ''}`} />
-                  </button>
-                  <AnimatePresence>
-                    {mobileTourOpen && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: 'auto', opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        className="overflow-hidden bg-orange-50/50 rounded-xl mx-2"
-                      >
-                        {tourPackages.map((pkg, index) => (
-                          <Link
-                            key={index}
-                            to={pkg.path}
-                            className="block px-8 py-3 text-gray-600 hover:text-orange-500 transition-colors text-sm font-medium border-l-2 border-transparent hover:border-orange-500"
-                            onClick={() => setIsOpen(false)}
-                          >
-                            {pkg.label}
-                          </Link>
-                        ))}
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
+                <Link to="/tour-packages" onClick={() => setIsOpen(false)} className={`block px-4 py-3 rounded-xl transition-all font-medium ${location.pathname === '/tour-packages' ? 'bg-orange-500 text-white shadow-md' : 'text-gray-700 hover:bg-orange-50'}`}>Tour Packages</Link>
 
-                <Link to="/contact" onClick={() => setIsOpen(false)} className={`block px-4 py-3 rounded-xl transition-all font-medium ${location.pathname === '/contact' ? 'bg-orange-500 text-white shadow-md' : 'text-gray-700 hover:bg-orange-50'}`}>Contact</Link>
+                <Link to="/contact" onClick={() => setIsOpen(false)} className={`block px-4 py-3 rounded-xl transition-all font-medium ${location.pathname === '/contact' ? 'bg-orange-500 text-white shadow-md' : 'text-gray-700 hover:bg-orange-50'}`}>Contact Us</Link>
 
                 <div className="pt-4 grid grid-cols-1 gap-3 px-2">
                   <a href="tel:+91-9278063535" className="flex items-center justify-center gap-3 bg-orange-600 text-white px-4 py-4 rounded-xl font-bold shadow-lg active:scale-95 transition-all">
